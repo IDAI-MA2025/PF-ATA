@@ -139,70 +139,67 @@
      color: var(--color-secundario);
 }
 
-/* SECCION DE SERVICIOS */
-#servicos{
+/* SECCION SERVICIOS */
+#servicios{
      height: 100vh;
      background: white;
      padding: 40px;
 }
- .servicios-titulos
- {
+
+.servicios-titulos{
      display: flex;
      justify-content: center;
      align-items: center;
      flex-direction: column;
- }
- .servicos-container{
-     margin-top: 30px;
+}
 
+.servicios-container{
+     margin-top: 30px;
+     
      display: grid;
      grid-template-columns: repeat(3, 1fr);
      grid-template-rows: repeat(2, auto);
      grid-gap: 30px;
 
      grid-template-areas: 
-          "ingredientes      imagen         rapidez"
-          "calidad            imagen         delivery" ;
-                    
- }
- 
- .calidad{
+          "ingredientes  imagen   rapidez"
+          "calidad       imagen   delivery" ;
+
+}
+
+.calidad{
      grid-row: calidad;
      grid-column: calidad;
-     
- }
- .ingredientes{
+}
+.ingredientes{
      grid-row: ingredientes;
      grid-column: ingredientes;
-     
- }
- .rapidez{
+}
+.rapidez{
      grid-row: rapidez;
      grid-column: rapidez;
-     
- }
- .delivert{
+}
+.delivery{
      grid-row: delivery;
      grid-column: delivery;
-     
- }
- .imagen-central{
+}
+.imagen-central{
      grid-row: imagen;
      grid-column: imagen;
      transition: all 0.5s;
-     
- }
- .imagen-central:hover{
+}
+
+.imagen-central:hover{
      transform: scale(1.1);
- }
+}
 
 .items{
      display: flex;
      justify-content: center;
      align-items: center;
      flex-direction: column;
-
 }
+
 .items span{
      width: 95px;
      font-size: 40px;
@@ -219,12 +216,13 @@
 .items span:hover{
      background: var(--color-secundario);
      color: white;
-
 }
+
 .ingredientes span,
 .calidad span{
-     background: var(--color-primario);
+     color: var(--color-primario);
 }
+
 .ingredientes span:hover,
 .calidad span:hover{
      background: var(--color-primario);
@@ -238,7 +236,7 @@
      text-align: center;
 }
 
-.items .text-items{
+.items .text-item{
      font-size: 14px;
      text-align: center;
      color: var(--color-texto);
@@ -250,26 +248,22 @@
 
 
 
-/* media queries */
-@media screen and(max-width:850px) {
-     /* SERVICIOS */
+/* MEDIA QUERIES */
+@media screen and (max-width: 850px) {
 
+     /* SECCCION SERVICIOS*/
      .servicios-container{
           margin-top: 50px;
           grid-template-columns: repeat(2, 1fr);
-          grid-template-areas: 
+          grid-template-areas:
                "ingredientes  rapidez"
                "calidad       delivery";
      }
+
      .imagen-central{
           display: none;
-
-
      }
-     
 }
-
-
 
 
 
@@ -277,34 +271,34 @@
 
 @media screen and (max-width: 650px) {
 
-  /* MENU PRINCIPAL */
-.menu-principal{
-      position: fixed;
-      top: 0;
-      margin-top: 0;
+     /* MENU PRINCIPAL */
+     .menu-principal{
+          position: fixed;
+          top: 0;
+          margin-top: 0;
      }
 
- .menu-principal i{
-      display: block;
+     .menu-principal i{
+          display: block;
      }
 
-.menu-bar{
-     justify-content: space-around;
-     align-items: center;
-     flex-direction: column;
+    .menu-bar{
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: column;
 
-      width: 100%;
-     height: 100vh;
-     position: fixed;
+          width: 100%;
+          height: 100vh;
+          position: fixed;
 
-     right: 0;
-     top: 0;
-     /*Indica la profundida y es para que siempre se vea el menu*/
-      z-index: 1000;
+          right: 0;
+          top: 0;
+          /*Indica la profundida y es para que siempre se vea el menu*/
+          z-index: 1000;
 
-      background: #333;
-      transition: all 1s;
-     transform: translateX(100%);
+          background: #333;
+          transition: all 1s;
+          transform: translateX(100%);
           
      }
 
@@ -329,3 +323,89 @@
           font-size: 20px;
      }
 }
+ /* SECCION DE EQUIPOS  */
+ #equipo {
+     height: 100vh;
+     display: flex;
+
+ }
+
+ .persona{
+     flex-grow: 1;
+     overflow: hidden;
+     position: relative;
+     transition: all 0.5s;
+ }
+
+ .persona:hover{
+     flex-grow: 3;
+ }
+
+ .persona-imagen{
+     height: 100%;
+     position: absolute;
+     
+     left: 50%;
+     transform: translateX(-50%);
+     filter: grayscale(80%);
+ }
+
+ .persona:hover .persona-imagen{
+     filter: grayscale(0%);
+ }
+
+ .persona-info{
+     position: absolute;
+     bottom: 10px;
+     width: 100%;
+
+     text-align: center;
+     opacity: 0%;
+     transition: all 0.1s;
+
+ }
+ .persona:hover .persona-info{
+     opacity: 1;
+ }
+
+ .persona-info h2{
+     font-size: 30px;
+     color: black;
+     font-weight: 600;
+     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+
+ }
+
+ .persona-info p{
+     font-size: 20px;
+     color: var(--color-secundario);
+     font-style: italic;
+     margin-top: 10px;
+     font-weight: 700;
+     margin-bottom: 20px;
+     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+ }
+
+ .persona-info a{
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+
+     color: white;
+     background: var(--color-secundario);
+
+     line-height: 40px;
+     border-radius: 50%;
+
+     margin: 0 5px;
+     font-size: 18px;
+     cursor: pointer;
+     transition: all 0.5s;
+ }
+
+ .social-media a:hover{
+     color: var(--color-secundario);
+     background: transparent;
+     transform: scale(2);
+ }
+ 
